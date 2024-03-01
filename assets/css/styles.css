@@ -1,0 +1,266 @@
+@import url(https://fonts.google.com/specimen/Overpass?preview.text_type=custom);
+@import url(https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom);
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+.body {
+  background-image: url(../image/illustration-editor-desktop.svg);
+}
+/*  Primary
+
+- Light red (CTA text): hsl(356, 100%, 66%)
+- Very light red (CTA hover background): hsl(355, 100%, 74%)
+- Very dark blue (headings): hsl(208, 49%, 24%)
+
+Neutral
+
+- White (text): hsl(0, 0%, 100%)
+- Grayish blue (footer text): hsl(240, 2%, 79%)
+- Very dark grayish blue (body copy): hsl(207, 13%, 34%)
+- Very dark black blue (footer background): hsl(240, 10%, 16%)
+
+Gradient
+
+Background gradient - Intro/CTA mobile nav:
+
+- Very light red: hsl(13, 100%, 72%)
+- Light red: hsl(353, 100%, 62%)
+
+Background gradient - body:
+
+- Very dark gray blue: hsl(237, 17%, 21%)
+- Very dark desaturated blue: hsl(237, 23%, 32%)
+
+## Typography
+
+*/
+
+:root {
+  --ctaText: hsl(356, 100%, 66%);
+  --CtaHover-bcg: hsl(355, 100%, 74%);
+  --heading: hsl(208, 49%, 24%);
+  --text: hsl(0, 0%, 100%);
+  --footer-text: hsl(240, 2%, 79%);
+  --body_copy: hsl(207, 13%, 34%);
+  --footerbcg: hsl(240, 10%, 16%);
+  --grad-intro: linear-gradient(
+    to right,
+    hsl(13, 100%, 72%),
+    hsl(353, 100%, 62%)
+  );
+  --body-grad: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  --size: 16px;
+  --family1: Overpass;
+  --weigth1: 300;
+  --weigth1s: 600;
+  --family: Ubuntu;
+  --weigth: 400;
+  --weigths: 500;
+  --weigths1: 700;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+.li-none {
+  list-style: none;
+}
+.p1 {
+  padding: 1rem;
+}
+.p-1 {
+  padding: 0 2rem;
+}
+.flex {
+  display: flex;
+}
+.gap1 {
+  gap: 1rem;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.jc-ar {
+  justify-content: space-around;
+}
+.jc-sb{
+  justify-content: space-between;
+}
+.option.active{
+  transform: translateY(2rem);
+}
+.wnav{
+  width: 70vw;
+}
+.none {
+  display: none;
+}
+.jc-end {
+  justify-content: end;
+}
+.jc-start {
+  justify-content: start;
+}
+.jc-center {
+  justify-content: center;
+}
+.aic {
+  align-items: center;
+}
+.pointer {
+  cursor: pointer;
+}
+.cta {
+  padding: 0.5rem 2rem;
+  background-color: var(--text);
+  color: var(--ctaText);
+  font-weight: 700;
+  transition: all 0.3s;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--CtaHover-bcg);
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+/* speeeeeeeeeecifique parameter for header */
+.header{
+    max-height: 10rem;
+}
+
+.user{
+  user-select: none;
+}
+li img.active{
+  transform: rotate(180deg);
+}
+/* option */
+.option{
+  width: 11rem;
+  border-radius: .5rem;
+  left: 0rem;
+  background-color: var(--text);
+  padding: 1rem;
+  color: var(--body_copy) !important;
+    position: absolute;
+    transform: translateY(-30rem);
+}
+.logsi{
+    max-height: 10rem;
+}
+.nav:hover{
+    text-underline-offset: 1rem;
+    text-decoration: underline;
+}
+.p2{
+    padding: 2rem;
+}
+.cta:hover {
+  color: var(--text);
+}
+.size{
+    width: 1rem;
+    height: .8rem;
+}
+.cta:hover::before {
+  width: 100%;
+}
+.tag{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+
+}
+.tag-style {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.content {
+  background-image: url(../image/bg-pattern-circles.svg);
+  background-position: bottom left;
+  border-radius: 0 2rem;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+.bcg-ima {
+  background-image: url(../image/bg-pattern-intro-desktop.svg) !important;
+}
+.intro {
+  width: 100%;
+  height: 90vh;
+  padding: 2rem 0;
+  background-image: url(../image/bg-pattern-intro-desktop.svg);
+  background-size: cover;
+  background-position: center 50%, left 55%;
+}
+.intro::after {
+  content: "";
+  background-image: var(--grad-intro);
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  top: 0;
+  z-index: -1;
+}
+
+.radiusTop {
+  border-radius: 0 2rem 0 0;
+}
+.radiusBot {
+  border-radius: 0 0 0 2rem;
+}
+
+.cta-radius {
+  border-radius: 2rem;
+}
+.heigth1 {
+  height: 90vh;
+}
+.heigth2 {
+  min-height: 100vh;
+}
+.content::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 0 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
+@media screen and (max-width: 900px) {
+  .navbar ul{
+    position: relative;
+    transform: translateY(12rem);
+    display: block;
+  }
+  .navbar ul li .option{
+    position: relative;
+    transform: translateY(12rem);
+    
+  }
+
+}
